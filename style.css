@@ -6,6 +6,8 @@
     font-style: normal;
 }
 
+
+
 .roboto-thin {
 font-family: "Roboto", sans-serif;
 font-weight: 100;
@@ -77,23 +79,57 @@ font-family: "Roboto", sans-serif;
 font-weight: 900;
 font-style: italic;
 }
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: auto; /* Allow scrolling */
+    position: relative; /* Establishes a positioning context */
+}
 
-.info{
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures it is behind other content */
+    overflow: hidden; /* Hides scrollbars */
+    filter: blur(4px); /* Adjust the blur radius as needed */
+}
+
+
+.info {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
+    z-index: 1; /* Ensures it is above the particles background */
+    padding: 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Includes padding and border in element's total width and height */
 }
 
-.photo img{
+.text-info h1 {
+    text-align: center;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.photo img {
     width: 400px;
     height: 550px;
     border-radius: 15px;
     object-fit: cover;
 }
 
-button{
+button {
     padding: 20px 70px;
     border: 1px solid white;
     border-radius: 10px;
@@ -103,7 +139,7 @@ button{
     background-color: rgb(140, 176, 243);
 }
 
-button:hover{
+button:hover {
     transform: scale(1.1);
 }
 
@@ -114,4 +150,89 @@ button:hover{
     border-radius: 0.2em; /* Optional: adds rounded corners */
     display: inline; /* Ensures it stays inline with the text */
 }
-  
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Add margin to ensure spacing from other sections */
+    padding: 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Includes padding and border in element's total width and height */
+}
+
+.project {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .2s;
+    cursor: pointer;
+    margin-bottom: 20px; /* Add space between projects */
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project img {
+    width: 450px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.text {
+    margin-left: 15px;
+}
+
+.text p {
+    width: 300px;
+}
+
+.title{
+    margin-left: 20px;
+
+}
+
+.title-title{
+    font-size: 50px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+
+    .project{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .title{
+        text-align: center;
+        margin: 0;
+    }
+    .info{
+        flex-direction: column-reverse;
+    }
+    .photo img{
+        border-radius: 50%;
+        width: 400px;
+        height: 400px;
+
+    }
+    .socials{
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    button{
+        margin-top: 20px;
+    }
+    .title-title{
+        font-size: 25px;
+    }
+    .text-info p{
+        font-size: 15px;
+        text-align: center;
+        width: 350px; 
+        margin: auto;
+    }
+}
